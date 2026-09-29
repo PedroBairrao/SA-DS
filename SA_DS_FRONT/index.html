@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acesso</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <!-- Visitante: entrar ou criar conta -->
+  <section id="view-auth">
+    <h1>Acesse sua conta</h1>
+    <div class="panel">
+      <div class="tabs" role="tablist">
+        <button role="tab" id="tab-login" aria-selected="true">Entrar</button>
+        <button role="tab" id="tab-register" aria-selected="false">Criar conta</button>
+      </div>
+      <p id="msg" class="msg" role="alert"></p>
+      <form id="form" novalidate>
+        <label id="field-username" hidden>Nome de usuário
+          <input name="username" autocomplete="username">
+        </label>
+        <label>E-mail
+          <input name="email" type="email" autocomplete="email" required>
+        </label>
+        <label>Senha
+          <input name="senha" type="password" autocomplete="current-password" required>
+          <span id="pw-hint" class="hint" hidden>Entre 8 e 72 caracteres.</span>
+        </label>
+        <button id="submit" class="primary" type="submit">Entrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Usuário logado: dados vindos de /me -->
+  <section id="view-profile" hidden>
+    <h1>Olá, <span id="p-name"></span></h1>
+    <div class="panel">
+      <dl>
+        <dt>ID</dt><dd id="p-id"></dd>
+        <dt>E-mail</dt><dd id="p-email"></dd>
+        <dt>Usuário</dt><dd id="p-username"></dd>
+      </dl>
+      <button id="logout" class="secondary">Sair</button>
+    </div>
+  </section>
+</main>
+<script src="main.js"></script>
+</body>
+</html>
